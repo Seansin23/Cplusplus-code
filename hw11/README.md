@@ -8,9 +8,9 @@
 
 Implement the Newton–Raphson method to find roots of the nonlinear function
 
-\[
-f(x) = x + 3\sin(2x).
-\]
+
+f(x) = x + 3sin(2x)
+
 
 The goal is to practice:
 
@@ -23,15 +23,15 @@ The goal is to practice:
 
 1. Prompts the user for an **initial guess** for the root.
 2. Uses the Newton–Raphson update
-   \[
-   x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
-   \]
+   
+   x_{n+1} = x_n - f(x_n) / f'(x_n)
+   
    where  
-   \[
-   f(x) = x + 3\sin(2x), \quad f'(x) = 1 + 6\cos(2x).
-   \]
+   
+   f(x) = x + 3sin(2x),  f'(x) = 1 + 6cos(2x).
+   
 3. Iterates until either:
-   - \(|x_{n+1} - x_n| < \varepsilon \cdot |x_n|\) with \(\varepsilon = 10^{-6}\), or  
+   - \(|x_{n+1} - x_n| < epsilon * |x_n|\) with \(epsilon = 10^{-6}\), or  
    - a maximum number of iterations is reached.
 4. Detects when \(|f'(x)|\) is too small and prints a warning that the method may overflow or fail.
 5. Prints the approximated root to `STDOUT` or a failure message.
