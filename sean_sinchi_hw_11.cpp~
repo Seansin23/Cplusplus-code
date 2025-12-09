@@ -1,0 +1,69 @@
+// Name Sinchi
+// Purpose: Gain experience with C++ loops
+// Date: 11/30/25
+
+#include <iostream>
+#include <cmath>
+
+double f(double x)
+{
+  return 3.0 + 3.0 * sin(2.0*x);
+}
+double fprime(double x)
+{
+  return 6.0 * cos(2.0*x);
+}
+
+void newton_raphson()
+{
+  double xold{};                  // Old estimate of root
+  double xnew{};                  // New estimate of root
+  double epsilon{};               // Convergence of criterion
+  bool converged = false;         // Convergence flag
+  int niter = 1;                  // Number of iteration
+  const int NITER_MAX = 300       // Max # iterations allowed
+
+  std::cout << " Enter inital guess at root & epsilon" << std::endl;
+  std::cin >> xold >> epsilon
+
+    while(niter < NITER_MAX)
+      {
+	if(abs(fprime(xold)) < 1.0)
+	  {
+	    if(abs(f(xold)) > abs(fprime(xold)) * 1.0)
+	      {
+		std::cout << "Derivative is small and method overflows" <<
+		  std::endl;
+		return 2;
+	      }
+	  }
+
+	xnew = xold - f(xold) / fprime(xold);
+
+	if(xold != 0.0)
+	  {
+	    converged = abs(xnew-xold) < epsilon*abs(xold);
+	  }
+	else
+	  {
+	    converged = abs(xnew-xold) < epsilon;
+	  }
+	if (converged)
+	  {
+	    std::cout << "Root is " << xnew << std::endl;
+	    return 0;
+	  }
+	
+	xold = xnew;                     // Update old guess to new guess
+	niter++;                         // Update iteration counter
+      }
+
+  std::cout << "Method failed: Too many iterations!" << std::endl;
+}
+
+int main()
+{
+  newton_raphson();
+  return 0;
+}
+
