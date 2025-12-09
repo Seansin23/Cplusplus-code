@@ -53,11 +53,12 @@ This assignment practices:
 9. Prints `m`, `b`, and `chis` to `STDOUT`.
 10. Writes the sorted data and fitted line values to the output file in **three columns**:
 
-
+    ```text
     x_i   y_i   y_fit(x_i)
-
+    ```
 
 ## How to compile and run
 
+```bash
 g++ -o sean_sinchi_hw_12 sean_sinchi_hw_12.cpp
 ./sean_sinchi_hw_12
