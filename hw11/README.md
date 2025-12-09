@@ -45,5 +45,5 @@ The header comment in the `.cpp` file also records:
 ## How to compile and run
 
 ```bash
-g++ -Wall -O2 -o sean_sinchi_hw_11 sean_sinchi_hw_11.cpp
+g++ -o sean_sinchi_hw_11 sean_sinchi_hw_11.cpp
 ./sean_sinchi_hw_11
