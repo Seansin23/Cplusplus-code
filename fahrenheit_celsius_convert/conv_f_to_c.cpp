@@ -8,8 +8,9 @@ int main(){
   double tempc{};
   int x{};
 
-  std::cout << " Enter 1 to go from f->c or 2 to go from c->f" << std::endl;
-  std::cin >> x;
+  while(std::cout << " Enter 1 to go from f->c or 2 to go from c->f: ",
+	std::cin >> x)
+  {
    if(x==1)
     {
     std::cout << "Enter temperature in fahrenheit" << std::endl;
@@ -23,6 +24,7 @@ int main(){
     std::cin >> tempc;
     tempf = (9.0/5.0 * tempc)+32.0;
     std::cout << " Temperature in degrees fahrenheit is: " << tempf << std::endl;
+    }
     }
   return 0;
 
